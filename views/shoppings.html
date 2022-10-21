@@ -1,0 +1,41 @@
+{{template "partials/header" .}}
+
+<h1>Daftar Produk</h1>
+<br />
+<div class="container">
+  <a href="/shoppings/create" class="btn btn-primary">Tambah Produk</a>
+  <div class="container">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Nama Product</th>
+          <th scope="col">Gambar</th>
+          <th scope="col">Quantity</th>
+          <th scope="col">Harga</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{range .Shoppings}}
+        <tr>
+          <th scope="row">{{.Id}}</th>
+          <td>{{.Name}}</td>
+          <td>
+            <img src="./public/upload/{{ .Image }}" alt="{{ .Image }}" width="200px" />
+          </td>
+          <td>{{.Quantity}}</td>
+          <td>{{.Price}}</td>
+          <td>
+            <a href="/shoppings/shoppingdetail?id={{.Id}}" class="btn btn-outline-info"> Detail</a>
+            &nbsp;
+            <a href="/shoppings/detail/{{.Id}}" class="btn btn-outline-info"> Detail 2</a>
+          </td>
+        </tr>
+        {{end}}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+{{template "partials/footer" .}}

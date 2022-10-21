@@ -1,0 +1,19 @@
+{{template "partials/header" .}}
+<h1>Produk Detail</h1>
+<br />
+
+<div class="card" style="width: 18rem">
+  <div class="card-body">
+    <h5 class="card-title">{{.Shopping.Name}}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">Product Id: {{.Shopping.Id}}</h6>
+    <p class="card-text">Quantity: {{.Shopping.Quantity}}</p>
+    <p class="card-text">Price: {{.Shopping.Price}}</p>
+  </div>
+</div>
+<br />
+<div>
+  <a href="/shoppings" class="btn btn-primary">Back</a> &nbsp; <a href="/shoppings/deleteshopping/{{.Shopping.Id}}" class="btn btn-danger">Hapus</a> &nbsp;
+  <a href="/shoppings/editshopping/{{.Shopping.Id}}" class="btn btn-info">Edit</a>
+</div>
+
+{{template "partials/footer" .}}
